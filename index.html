@@ -55,6 +55,64 @@
       top: 10%;
       right: -100px;
     }
+    /* HERO */
+
+    .hero {
+      padding-top: 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 64px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .hero-text .role {
+      font-size: 18px;
+      color: #6b7280;
+      margin-bottom: 24px;
+    }
+
+    .hero-text .intro {
+      max-width: 480px;
+      font-size: 16px;
+      color: #374151;
+    }
+
+    .hero-photo {
+      position: relative;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 24px;
+      object-fit: cover;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.08);
+    }
+
+    /* adaptive */
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text h1 {
+        font-size: 48px;
+      }
+
+      .hero-photo {
+        margin-top: 40px;
+      }
+    }    
   </style>
 </head>
 
@@ -65,6 +123,24 @@
   <div class="container">
 
     <!-- BLOCKS WILL GO HERE -->
+<section class="hero">
+  <div class="hero-grid">
+
+    <div class="hero-text">
+      <h1>Masha Ivanova</h1>
+      <p class="role">Graphic designer · Figma & Web</p>
+      <p class="intro">
+        I create visual systems, social media design and clean web layouts.
+        Focused on digital aesthetics and structure.
+      </p>
+    </div>
+
+    <div class="hero-photo">
+      <img src="images/profile/profile.jpg.png" alt="Masha Ivanova">
+    </div>
+
+  </div>
+</section>
 
   </div>
 
