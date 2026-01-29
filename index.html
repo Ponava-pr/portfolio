@@ -15,7 +15,7 @@ img{max-width:100%;height:auto;display:block}
 
 body{
   font-family:'Inter',sans-serif;
-  background:linear-gradient(180deg,#f6f7fb,#eef0f6);
+  background:#f4f5f8;
   color:#1f2933;
   line-height:1.7;
 }
@@ -23,10 +23,10 @@ body{
 .container{
   max-width:1200px;
   margin:0 auto;
-  padding:80px 20px;
+  padding:100px 20px;
 }
 
-section{margin-bottom:120px}
+section{margin-bottom:140px}
 
 h1,h2,h3{
   font-family:'Space Grotesk',sans-serif;
@@ -34,118 +34,139 @@ h1,h2,h3{
 }
 
 h1{font-size:64px}
-h2{font-size:40px;margin-bottom:40px}
-h3{font-size:26px;margin-bottom:24px}
+h2{font-size:40px;margin-bottom:48px}
+h3{font-size:26px;margin-bottom:32px}
 
-p{font-size:18px;color:#374151}
+p{
+  font-size:18px;
+  color:#374151;
+  white-space:pre-line;
+}
 
 /* HERO */
 
-.hero-grid{
+.hero{
   display:grid;
   grid-template-columns:1.2fr 1fr;
-  gap:60px;
+  gap:80px;
   align-items:center;
 }
 
-.role{
-  font-size:22px;
-  color:#6b7280;
-  margin-top:16px;
-}
-
-.hero-photo img{
-  max-width:420px;
+.hero img{
   border-radius:28px;
-  box-shadow:0 30px 80px rgba(0,0,0,.1);
 }
 
 /* SKILLS */
 
-.skills-grid{
+.skills{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:24px;
+  gap:32px;
 }
 
 .skill{
   padding:32px;
-  border-radius:22px;
-  background:rgba(255,255,255,.65);
+  border-radius:24px;
+  background:#fff;
   font-size:20px;
 }
 
 .skill.main{
   grid-column:span 2;
   font-size:32px;
-  background:linear-gradient(135deg,#e6e4ff,#f7f6ff);
 }
 
 /* PORTFOLIO BLOCK */
 
-.portfolio-block{
-  padding:56px;
-  border-radius:32px;
-  background:rgba(255,255,255,.6);
-  margin-bottom:80px;
-}
-
-.case{
-  display:grid;
-  grid-template-columns:1.1fr 1fr;
-  gap:40px;
-}
-
-.case-right{
-  display:flex;
-  flex-direction:column;
-}
-
-.case-right p{
-  white-space:pre-line;
-}
-
-.case-images{
-  display:flex;
-  flex-direction:column;
-  gap:24px;
-  margin-top:auto;
-}
-
-/* WEB */
-
-.web-wrapper{
+.block{
   background:#fff;
-  padding:56px;
-  border-radius:32px;
-  box-shadow:0 20px 60px rgba(0,0,0,.06);
+  border-radius:36px;
+  padding:64px;
 }
 
-.web-case{
+/* SOCIAL */
+
+.social-layout{
   display:grid;
-  grid-template-columns:1fr 1.2fr;
-  gap:40px;
-  margin-bottom:80px;
+  grid-template-columns:1fr 1fr;
+  gap:48px;
 }
 
-.web-case.reverse{
-  grid-template-columns:1.2fr 1fr;
-}
-
-.devices{
+.social-left{
   display:flex;
   flex-direction:column;
   gap:32px;
 }
 
+.social-right{
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+}
+
+.social-images{
+  display:flex;
+  flex-direction:column;
+  gap:32px;
+}
+
+/* PRINT */
+
+.print-layout{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:64px;
+}
+
+/* WEB */
+
+.web-layout{
+  display:flex;
+  flex-direction:column;
+  gap:120px;
+}
+
+.web-site{
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  gap:64px;
+}
+
+.web-site.reverse{
+  grid-template-columns:1fr 1.3fr;
+}
+
+.web-stack{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:40px;
+}
+
+/* PRESENTATIONS */
+
+.presentation-layout{
+  display:grid;
+  grid-template-columns:1fr 1.3fr;
+  gap:64px;
+}
+
+.presentation-slides{
+  display:flex;
+  gap:32px;
+  margin-top:64px;
+}
+
 /* ADAPTIVE */
 
 @media(max-width:900px){
-  .hero-grid,
-  .case,
-  .web-case,
-  .web-case.reverse,
-  .skills-grid{
+  .hero,
+  .social-layout,
+  .print-layout,
+  .web-site,
+  .web-site.reverse,
+  .presentation-layout,
+  .skills{
     grid-template-columns:1fr;
   }
 
@@ -159,20 +180,16 @@ p{font-size:18px;color:#374151}
 <div class="container">
 
 <section class="hero">
-  <div class="hero-grid">
-    <div>
-      <h1>Мария Иванова</h1>
-      <p class="role">Графический дизайнер · Figma & Web</p>
-    </div>
-    <div class="hero-photo">
-      <img src="images/profile/profile2.jpg">
-    </div>
+  <div>
+    <h1>Мария Иванова</h1>
+    <p>Графический дизайнер · Figma & Web</p>
   </div>
+  <img src="images/profile/profile2.jpg">
 </section>
 
 <section>
 <h2>Навыки</h2>
-<div class="skills-grid">
+<div class="skills">
   <div class="skill main">Figma</div>
   <div class="skill">Adobe Illustrator</div>
   <div class="skill">Adobe Photoshop</div>
@@ -184,13 +201,18 @@ p{font-size:18px;color:#374151}
 <section>
 <h2>Портфолио</h2>
 
-<div class="portfolio-block">
+<div class="block">
 <h3>Социальные сети</h3>
-<div class="case">
-  <img src="images/social/social-1.jpg.png">
-  <div class="case-right">
-<p>
-Создание визуальных материалов 
+
+<div class="social-layout">
+  <div class="social-left">
+    <img src="images/social/social-1.jpg.png">
+    <img src="images/social/social-3.jpg.png">
+  </div>
+
+  <div class="social-right">
+    <p>
+Создание визуальных материалов
 для социальных сетей
 
 Создаю постеры, баннеры, шапки,
@@ -199,20 +221,20 @@ p{font-size:18px;color:#374151}
 под формат и задачу:
 от информативных постов
 до оформлений каналов.
-</p>
-<div class="case-images">
-  <img src="images/social/social-2.jpg.png">
-  <img src="images/social/social-4.jpg.png">
-</div>
+    </p>
+
+    <div class="social-images">
+      <img src="images/social/social-2.jpg.png">
+      <img src="images/social/social-4.jpg.png">
+    </div>
   </div>
 </div>
 </div>
 
-<div class="portfolio-block">
-<h3>Дизайн полиграфии</h3>
-<div class="case">
-  <img src="images/print/print-main.jpg.png">
-  <div class="case-right">
+<div class="block">
+<h3>Полиграфия</h3>
+
+<div class="print-layout">
 <p>
 Работа с полиграфической
 продукцией и создание
@@ -227,38 +249,51 @@ p{font-size:18px;color:#374151}
 размещение текстовых блоков,
 изображений и графики
 </p>
-<div class="case-images">
-  <img src="images/print/print-wide.jpg.png">
+
+<div>
+  <img src="images/print/print-main.jpg.png">
+  <img src="images/print/print-wide.jpg.png" style="margin-top:40px">
 </div>
-  </div>
 </div>
 </div>
 
-<div class="portfolio-block web-wrapper">
+<div class="block">
 <h3>Веб-дизайн</h3>
 
-<div class="web-case">
-  <div class="devices">
+<div class="web-layout">
+
+<div class="web-site">
+  <img src="images/web/web-site1-desktop.jpg.jpg">
+  <div class="web-stack">
+    <p>
+Создание дизайна веб-страниц,
+включая главные и внутренние
+разделы.
+
+Разработка макетов с продуманной
+структурой блоков и визуальных
+акцентов.
+    </p>
     <img src="images/web/web-site1-mobile.jpg.png">
     <img src="images/web/web-site1-laptop.jpg.png">
   </div>
-  <img src="images/web/web-site1-desktop.jpg.jpg">
 </div>
 
-<div class="web-case reverse">
-  <div class="devices">
+<div class="web-site reverse">
+  <div class="web-stack">
     <img src="images/web/web-site2-mobile.jpg.png">
     <img src="images/web/web-site2-laptop.jpg.png">
   </div>
   <img src="images/web/web-site2-desktop.jpg.jpg">
 </div>
+
+</div>
 </div>
 
-<div class="portfolio-block">
+<div class="block">
 <h3>Презентации</h3>
-<div class="case">
-  <img src="images/presentations/presentation-overview.jpg.png">
-  <div class="case-right">
+
+<div class="presentation-layout">
 <p>
 Создание презентаций
 для различных целей
@@ -271,13 +306,16 @@ p{font-size:18px;color:#374151}
 читаемости и баланса
 между текстом и графикой.
 </p>
-<div class="case-images">
+
+<img src="images/presentations/presentation-overview.jpg.png">
+</div>
+
+<div class="presentation-slides">
   <img src="images/presentations/presentation-slide-1.jpg.png">
   <img src="images/presentations/presentation-slide-2.jpg.png">
   <img src="images/presentations/presentation-slide-3.jpg.png">
 </div>
-  </div>
-</div>
+
 </div>
 
 </section>
