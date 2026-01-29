@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Masha Ivanova — Graphic Designer</title>
+  <title>Мария Иванова — Графический дизайнер</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Fonts -->
@@ -15,6 +15,12 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
 
     body {
@@ -44,7 +50,6 @@
       margin-bottom: 120px;
     }
 
-    /* subtle background elements */
     .bg-shape {
       position: fixed;
       width: 400px;
@@ -55,11 +60,8 @@
       top: 10%;
       right: -100px;
     }
-    /* HERO */
 
-    .hero {
-      padding-top: 40px;
-    }
+    /* HERO */
 
     .hero-grid {
       display: grid;
@@ -80,314 +82,196 @@
       margin-bottom: 24px;
     }
 
-    .hero-text .intro {
-      max-width: 480px;
-      font-size: 16px;
-      color: #374151;
-    }
-
-    .hero-photo {
-      position: relative;
-    }
-
     .hero-photo img {
-      width: 100%;
       max-width: 420px;
       border-radius: 24px;
-      object-fit: cover;
       box-shadow: 0 30px 80px rgba(0,0,0,0.08);
     }
-    
+
     /* SKILLS */
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
 
-.skill {
-  padding: 28px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(10px);
-  font-size: 18px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  min-height: 100px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .skill {
+      padding: 28px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(10px);
+      font-size: 18px;
+      font-weight: 500;
+    }
 
-.skill span {
-  opacity: 0.9;
-}
+    .skill.main {
+      grid-column: span 2;
+      font-size: 28px;
+      background: linear-gradient(135deg, #e7e4ff, #f6f5ff);
+    }
 
-.skill.main {
-  grid-column: span 2;
-  font-size: 28px;
-  font-weight: 600;
-  background: linear-gradient(135deg, #e7e4ff, #f6f5ff);
-}
+    .skill.small {
+      opacity: 0.7;
+    }
 
-.skill.small {
-  opacity: 0.75;
-}
+    /* PORTFOLIO */
 
-.skill:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-}
+    .portfolio h3 {
+      margin: 48px 0 24px;
+      font-size: 22px;
+    }
 
-/* adaptive */
+    .portfolio-grid {
+      display: grid;
+      gap: 24px;
+    }
 
-@media (max-width: 900px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
+    .portfolio-grid.social {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-  .skill.main {
-    grid-column: span 1;
-  }
-}
+    .portfolio-grid.print {
+      grid-template-columns: 1fr;
+    }
 
+    .portfolio-grid img {
+      border-radius: 20px;
+      background: #f0f0f0;
+    }
 
-    /* adaptive */
+    /* WEB */
+
+    .web-project {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .web-project.reverse {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    .devices {
+      display: grid;
+      gap: 24px;
+    }
+
+    /* PRESENTATIONS */
+
+    .slides {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    /* ADAPTIVE */
 
     @media (max-width: 900px) {
-      .hero-grid {
+      .hero-grid,
+      .web-project,
+      .web-project.reverse {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skill.main {
+        grid-column: span 1;
+      }
+
+      .portfolio-grid.social {
+        grid-template-columns: 1fr;
+      }
+
+      .slides {
         grid-template-columns: 1fr;
       }
 
       .hero-text h1 {
         font-size: 48px;
       }
-
-      .hero-photo {
-        margin-top: 40px;
-      }
     }
-  /* PORTFOLIO */
-
-.portfolio h3 {
-  margin: 48px 0 24px;
-  font-size: 22px;
-}
-
-.portfolio-section {
-  margin-bottom: 80px;
-}
-
-.portfolio-grid {
-  display: grid;
-  gap: 24px;
-}
-
-.portfolio-grid.social {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.portfolio-grid.print {
-  grid-template-columns: 1fr;
-}
-
-.portfolio-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20px;
-  background: #eee;
-}
-
-/* aspect ratios */
-
-.portfolio-grid.social img {
-  aspect-ratio: 4 / 3;
-}
-
-.portfolio-grid.print img {
-  aspect-ratio: 4 / 3;
-}
-
-.portfolio-grid.print .wide {
-  aspect-ratio: 16 / 5;
-}
-
-/* WEB */
-
-.web-project {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 24px;
-  margin-bottom: 48px;
-}
-
-.web-project.reverse {
-  grid-template-columns: 1fr 2fr;
-}
-
-.web-project .desktop {
-  aspect-ratio: 16 / 9;
-}
-
-.devices {
-  display: grid;
-  gap: 24px;
-}
-
-.devices img {
-  aspect-ratio: 9 / 16;
-}
-
-/* PRESENTATIONS */
-
-.presentations .overview {
-  aspect-ratio: 16 / 9;
-  margin-bottom: 24px;
-}
-
-.slides {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-/* ADAPTIVE */
-
-@media (max-width: 900px) {
-  .portfolio-grid.social {
-    grid-template-columns: 1fr;
-  }
-
-  .web-project,
-  .web-project.reverse {
-    grid-template-columns: 1fr;
-  }
-
-  .slides {
-    grid-template-columns: 1fr;
-  }
-}
   </style>
 </head>
 
 <body>
 
-  <div class="bg-shape"></div>
+<div class="bg-shape"></div>
 
-  <div class="container">
+<div class="container">
 
-    <!-- BLOCKS WILL GO HERE -->
 <section class="hero">
   <div class="hero-grid">
-
     <div class="hero-text">
       <h1>Мария Иванова</h1>
       <p class="role">Графический дизайнер · Figma & Web</p>
-      <p class="intro">
-        I create visual systems, social media design and clean web layouts.
-        Focused on digital aesthetics and structure.
-      </p>
     </div>
-
     <div class="hero-photo">
-      <img src="images/profile/profile2.jpg" alt="Masha Ivanova">
+      <img src="images/profile/profile2.jpg" alt="">
     </div>
-
   </div>
 </section>
-    
-    <section class="skills">
+
+<section class="skills">
   <h2>Навыки</h2>
-
   <div class="skills-grid">
-
-    <div class="skill main">
-      <span>Figma</span>
-    </div>
-
-    <div class="skill">
-      <span>Adobe Illustrator</span>
-    </div>
-
-    <div class="skill">
-      <span>Adobe Photoshop</span>
-    </div>
-
-    <div class="skill">
-      <span>Adobe InDesign</span>
-    </div>
-
-    <div class="skill small">
-      <span>Blender / After Effects</span>
-    </div>
-
+    <div class="skill main">Figma</div>
+    <div class="skill">Adobe Illustrator</div>
+    <div class="skill">Adobe Photoshop</div>
+    <div class="skill">Adobe InDesign</div>
+    <div class="skill small">Blender / CapCut</div>
   </div>
 </section>
+
 <section class="portfolio">
   <h2>Портфолио</h2>
 
-  <!-- SOCIAL MEDIA -->
-  <div class="portfolio-section">
-    <h3>Социальные сети</h3>
-    <div class="portfolio-grid social">
-      <img src="images/social/social-1.jpg.png" alt="">
-      <img src="images/social/social-2.jpg.png" alt="">
-      <img src="images/social/social-3.jpg.png" alt="">
-      <img src="images/social/social-4.jpg.png" alt="">
+  <h3>Социальные сети</h3>
+  <div class="portfolio-grid social">
+    <img src="images/social/social-1.jpg.png">
+    <img src="images/social/social-2.jpg.png">
+    <img src="images/social/social-3.jpg.png">
+    <img src="images/social/social-4.jpg.png">
+  </div>
+
+  <h3>Дизайн полиграфической продукции</h3>
+  <div class="portfolio-grid print">
+    <img src="images/print/print-main.jpg.png">
+    <img src="images/print/print-wide.jpg.png">
+  </div>
+
+  <h3>Веб-дизайн и структура страницы</h3>
+  <div class="web-project">
+    <img src="images/web/web-site1-desktop.jpg.png">
+    <div class="devices">
+      <img src="images/web/web-site1-mobile.jpg.png">
+      <img src="images/web/web-site1-laptop.jpg.png">
     </div>
   </div>
 
-  <!-- PRINT -->
-  <div class="portfolio-section">
-    <h3>Дизайн полиграфической продукции</h3>
-    <div class="portfolio-grid print">
-      <img src="images/print/print-main.jpg.png" alt="">
-      <img src="images/print/print-wide.jpg.png" class="wide" alt="">
+  <div class="web-project reverse">
+    <img src="images/web/web-site2-desktop.jpg.png">
+    <div class="devices">
+      <img src="images/web/web-site2-mobile.jpg.png">
+      <img src="images/web/web-site2-laptop.jpg.png">
     </div>
   </div>
 
-  <!-- WEB -->
-  <div class="portfolio-section">
-    <h3>Веб-дизайн и структура страницы</h3>
-
-    <div class="web-project">
-      <img src="images/web/web-site1-desktop.jpg.png" class="desktop" alt="">
-      <div class="devices">
-        <img src="images/web/web-site1-mobile.jpg.png" alt="">
-        <img src="images/web/web-site1-laptop.jpg.png" alt="">
-      </div>
-    </div>
-
-    <div class="web-project reverse">
-      <img src="images/web/web-site2-desktop.jpg.png" class="desktop" alt="">
-      <div class="devices">
-        <img src="images/web/web-site2-mobile.jpg.png" alt="">
-        <img src="images/web/web-site2-laptop.jpg.png" alt="">
-      </div>
-    </div>
-  </div>
-
-  <!-- PRESENTATIONS -->
-  <div class="portfolio-section">
-    <h3>Презентации</h3>
-
-    <div class="presentations">
-      <img src="images/presentations/presentation-overview.jpg.png" class="overview" alt="">
-
-      <div class="slides">
-        <img src="images/presentations/presentation-slide-1.jpg.png" alt="">
-        <img src="images/presentations/presentation-slide-2.jpg.png" alt="">
-        <img src="images/presentations/presentation-slide-3.jpg.png" alt="">
-      </div>
-    </div>
+  <h3>Презентации</h3>
+  <img src="images/presentations/presentation-overview.jpg.png">
+  <div class="slides">
+    <img src="images/presentations/presentation-slide-1.jpg.png">
+    <img src="images/presentations/presentation-slide-2.jpg.png">
+    <img src="images/presentations/presentation-slide-3.jpg.png">
   </div>
 
 </section>
 
-
-  </div>
-
+</div>
 </body>
 </html>
-
