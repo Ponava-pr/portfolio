@@ -166,7 +166,108 @@
       .hero-photo {
         margin-top: 40px;
       }
-    }    
+    }
+  /* PORTFOLIO */
+
+.portfolio h3 {
+  margin: 48px 0 24px;
+  font-size: 22px;
+}
+
+.portfolio-section {
+  margin-bottom: 80px;
+}
+
+.portfolio-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.portfolio-grid.social {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.portfolio-grid.print {
+  grid-template-columns: 1fr;
+}
+
+.portfolio-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  background: #eee;
+}
+
+/* aspect ratios */
+
+.portfolio-grid.social img {
+  aspect-ratio: 4 / 3;
+}
+
+.portfolio-grid.print img {
+  aspect-ratio: 4 / 3;
+}
+
+.portfolio-grid.print .wide {
+  aspect-ratio: 16 / 5;
+}
+
+/* WEB */
+
+.web-project {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.web-project.reverse {
+  grid-template-columns: 1fr 2fr;
+}
+
+.web-project .desktop {
+  aspect-ratio: 16 / 9;
+}
+
+.devices {
+  display: grid;
+  gap: 24px;
+}
+
+.devices img {
+  aspect-ratio: 9 / 16;
+}
+
+/* PRESENTATIONS */
+
+.presentations .overview {
+  aspect-ratio: 16 / 9;
+  margin-bottom: 24px;
+}
+
+.slides {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ADAPTIVE */
+
+@media (max-width: 900px) {
+  .portfolio-grid.social {
+    grid-template-columns: 1fr;
+  }
+
+  .web-project,
+  .web-project.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .slides {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 </head>
 
@@ -218,10 +319,70 @@
     </div>
 
     <div class="skill small">
-      <span>Blender / CapCut</span>
+      <span>Blender / After Effects</span>
     </div>
 
   </div>
+</section>
+<section class="portfolio">
+  <h2>Портфолио</h2>
+
+  <!-- SOCIAL MEDIA -->
+  <div class="portfolio-section">
+    <h3>Социальные сети</h3>
+    <div class="portfolio-grid social">
+      <img src="images/social/social-1.jpg.png" alt="">
+      <img src="images/social/social-2.jpg.png" alt="">
+      <img src="images/social/social-3.jpg.png" alt="">
+      <img src="images/social/social-4.jpg.png" alt="">
+    </div>
+  </div>
+
+  <!-- PRINT -->
+  <div class="portfolio-section">
+    <h3>Дизайн полиграфической продукции</h3>
+    <div class="portfolio-grid print">
+      <img src="images/print/print-main.jpg.png" alt="">
+      <img src="images/print/print-wide.jpg.png" class="wide" alt="">
+    </div>
+  </div>
+
+  <!-- WEB -->
+  <div class="portfolio-section">
+    <h3>Веб-дизайн и структура страницы</h3>
+
+    <div class="web-project">
+      <img src="images/web/web-site1-desktop.jpg.png" class="desktop" alt="">
+      <div class="devices">
+        <img src="images/web/web-site1-mobile.jpg.png" alt="">
+        <img src="images/web/web-site1-laptop.jpg.png" alt="">
+      </div>
+    </div>
+
+    <div class="web-project reverse">
+      <img src="images/web/web-site2-desktop.jpg.png" class="desktop" alt="">
+      <div class="devices">
+        <img src="images/web/web-site2-mobile.jpg.png" alt="">
+        <img src="images/web/web-site2-laptop.jpg.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- PRESENTATIONS -->
+  <div class="portfolio-section">
+    <h3>Презентации</h3>
+
+    <div class="presentations">
+      <img src="images/presentations/presentation-overview.jpg.png" class="overview" alt="">
+
+      <div class="slides">
+        <img src="images/presentations/presentation-slide-1.jpg.png" alt="">
+        <img src="images/presentations/presentation-slide-2.jpg.png" alt="">
+        <img src="images/presentations/presentation-slide-3.jpg.png" alt="">
+      </div>
+    </div>
+  </div>
+
 </section>
 
 
