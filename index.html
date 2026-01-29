@@ -5,7 +5,6 @@
   <title>Мария Иванова — Графический дизайнер</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
@@ -25,9 +24,9 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, #f6f7fb 0%, #f1f3f8 100%);
+      background: linear-gradient(180deg, #f6f7fb, #eef0f6);
       color: #1f2933;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     .container {
@@ -36,30 +35,18 @@
       padding: 80px 20px;
     }
 
+    section {
+      margin-bottom: 100px;
+    }
+
     h1, h2, h3 {
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 600;
     }
 
-    h2 {
-      font-size: 32px;
-      margin-bottom: 40px;
-    }
-
-    section {
-      margin-bottom: 120px;
-    }
-
-    .bg-shape {
-      position: fixed;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(180,160,255,0.25), transparent 70%);
-      filter: blur(80px);
-      z-index: -1;
-      top: 10%;
-      right: -100px;
-    }
+    h1 { font-size: 64px; }
+    h2 { font-size: 40px; margin-bottom: 40px; }
+    h3 { font-size: 24px; margin-bottom: 24px; }
 
     /* HERO */
 
@@ -70,22 +57,16 @@
       align-items: center;
     }
 
-    .hero-text h1 {
-      font-size: 64px;
-      line-height: 1.1;
-      margin-bottom: 16px;
-    }
-
-    .hero-text .role {
-      font-size: 18px;
+    .role {
+      font-size: 22px;
       color: #6b7280;
-      margin-bottom: 24px;
+      margin-top: 16px;
     }
 
     .hero-photo img {
       max-width: 420px;
-      border-radius: 24px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.08);
+      border-radius: 28px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.1);
     }
 
     /* SKILLS */
@@ -97,55 +78,57 @@
     }
 
     .skill {
-      padding: 28px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.6);
-      backdrop-filter: blur(10px);
-      font-size: 18px;
-      font-weight: 500;
+      padding: 32px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.65);
+      font-size: 20px;
     }
 
     .skill.main {
       grid-column: span 2;
-      font-size: 28px;
-      background: linear-gradient(135deg, #e7e4ff, #f6f5ff);
+      font-size: 32px;
+      background: linear-gradient(135deg, #e6e4ff, #f7f6ff);
     }
 
-    .skill.small {
-      opacity: 0.7;
+    /* PORTFOLIO COMMON */
+
+    .portfolio-block {
+      padding: 56px;
+      border-radius: 32px;
+      background: rgba(255,255,255,0.55);
+      margin-bottom: 80px;
     }
 
-    /* PORTFOLIO */
-
-    .portfolio h3 {
-      margin: 48px 0 24px;
-      font-size: 22px;
-    }
+    /* SOCIAL */
 
     .portfolio-grid {
       display: grid;
-      gap: 24px;
+      gap: 28px;
     }
 
     .portfolio-grid.social {
       grid-template-columns: repeat(2, 1fr);
     }
 
+    /* PRINT */
+
     .portfolio-grid.print {
       grid-template-columns: 1fr;
     }
 
-    .portfolio-grid img {
-      border-radius: 20px;
-      background: #f0f0f0;
-    }
-
     /* WEB */
+
+    .web-wrapper {
+      background: #ffffff;
+      padding: 56px;
+      border-radius: 32px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+    }
 
     .web-project {
       display: grid;
       grid-template-columns: 2fr 1fr;
-      gap: 24px;
+      gap: 32px;
       margin-bottom: 64px;
     }
 
@@ -160,114 +143,121 @@
 
     /* PRESENTATIONS */
 
+    .presentation-overview {
+      margin-bottom: 48px;
+    }
+
     .slides {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 24px;
+      grid-template-columns: 2fr 1fr;
+      gap: 32px;
+    }
+
+    .slides-column {
+      display: grid;
+      gap: 32px;
     }
 
     /* ADAPTIVE */
 
     @media (max-width: 900px) {
       .hero-grid,
+      .skills-grid,
+      .portfolio-grid.social,
       .web-project,
-      .web-project.reverse {
-        grid-template-columns: 1fr;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .skill.main {
-        grid-column: span 1;
-      }
-
-      .portfolio-grid.social {
-        grid-template-columns: 1fr;
-      }
-
+      .web-project.reverse,
       .slides {
         grid-template-columns: 1fr;
       }
 
-      .hero-text h1 {
-        font-size: 48px;
-      }
+      h1 { font-size: 48px; }
+      h2 { font-size: 32px; }
     }
   </style>
 </head>
 
 <body>
 
-<div class="bg-shape"></div>
-
 <div class="container">
 
 <section class="hero">
   <div class="hero-grid">
-    <div class="hero-text">
+    <div>
       <h1>Мария Иванова</h1>
       <p class="role">Графический дизайнер · Figma & Web</p>
     </div>
     <div class="hero-photo">
-      <img src="images/profile/profile2.jpg" alt="">
+      <img src="images/profile/profile2.jpg">
     </div>
   </div>
 </section>
 
-<section class="skills">
+<section>
   <h2>Навыки</h2>
   <div class="skills-grid">
     <div class="skill main">Figma</div>
     <div class="skill">Adobe Illustrator</div>
     <div class="skill">Adobe Photoshop</div>
     <div class="skill">Adobe InDesign</div>
-    <div class="skill small">Blender / CapCut</div>
+    <div class="skill">Blender / CapCut</div>
   </div>
 </section>
 
-<section class="portfolio">
+<section>
   <h2>Портфолио</h2>
 
-  <h3>Социальные сети</h3>
-  <div class="portfolio-grid social">
-    <img src="images/social/social-1.jpg.png">
-    <img src="images/social/social-2.jpg.png">
-    <img src="images/social/social-3.jpg.png">
-    <img src="images/social/social-4.jpg.png">
-  </div>
-
-  <h3>Дизайн полиграфической продукции</h3>
-  <div class="portfolio-grid print">
-    <img src="images/print/print-main.jpg.png">
-    <img src="images/print/print-wide.jpg.png">
-  </div>
-
-  <h3>Веб-дизайн и структура страницы</h3>
-  <div class="web-project">
-    <img src="images/web/web-site1-desktop.jpg.jpg">
-    <div class="devices">
-      <img src="images/web/web-site1-mobile.jpg.png">
-      <img src="images/web/web-site1-laptop.jpg.png">
+  <div class="portfolio-block">
+    <h3>Социальные сети</h3>
+    <div class="portfolio-grid social">
+      <img src="images/social/social-1.jpg.png">
+      <img src="images/social/social-2.jpg.png">
+      <img src="images/social/social-3.jpg.png">
+      <img src="images/social/social-4.jpg.png">
     </div>
   </div>
 
-  <div class="web-project reverse">
-    <img src="images/web/web-site2-desktop.jpg.jpg">
-    <div class="devices">
-      <img src="images/web/web-site2-mobile.jpg.png">
-      <img src="images/web/web-site2-laptop.jpg.png">
+  <div class="portfolio-block">
+    <h3>Полиграфия</h3>
+    <div class="portfolio-grid print">
+      <img src="images/print/print-main.jpg.png">
+      <img src="images/print/print-wide.jpg.png">
     </div>
   </div>
 
-  <h3>Презентации</h3>
-  <img src="images/presentations/presentation-overview.jpg.png">
-  <div class="slides">
-    <img src="images/presentations/presentation-slide-1.jpg.png">
-    <img src="images/presentations/presentation-slide-2.jpg.png">
-    <img src="images/presentations/presentation-slide-3.jpg.png">
+  <div class="portfolio-block web-wrapper">
+    <h3>Веб-дизайн</h3>
+
+    <div class="web-project">
+      <img src="images/web/web-site1-desktop.jpg.jpg">
+      <div class="devices">
+        <img src="images/web/web-site1-mobile.jpg.png">
+        <img src="images/web/web-site1-laptop.jpg.png">
+      </div>
+    </div>
+
+    <div class="web-project reverse">
+      <img src="images/web/web-site2-desktop.jpg.jpg">
+      <div class="devices">
+        <img src="images/web/web-site2-mobile.jpg.png">
+        <img src="images/web/web-site2-laptop.jpg.png">
+      </div>
+    </div>
+  </div>
+
+  <div class="portfolio-block">
+    <h3>Презентации</h3>
+
+    <div class="presentation-overview">
+      <img src="images/presentations/presentation-overview.jpg.png">
+    </div>
+
+    <div class="slides">
+      <img src="images/presentations/presentation-slide-1.jpg.png">
+      <div class="slides-column">
+        <img src="images/presentations/presentation-slide-2.jpg.png">
+        <img src="images/presentations/presentation-slide-3.jpg.png">
+      </div>
+    </div>
   </div>
 
 </section>
