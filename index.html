@@ -71,11 +71,22 @@ p{
   border-radius:24px;
   background:#fff;
   font-size:20px;
+  text-align:center;
+  cursor:pointer;
+  transition: all 0.3s ease;
+}
+
+.skill:hover{
+  transform: scale(1.05);
+  box-shadow:0 10px 20px rgba(0,0,0,0.1);
 }
 
 .skill.main{
   grid-column:span 2;
   font-size:32px;
+  font-weight:700;
+  background: linear-gradient(135deg, #b19fff, #ffffff);
+  color:#1f2933;
 }
 
 /* PORTFOLIO BLOCK */
@@ -105,7 +116,7 @@ p{
 .social-left img{
   max-height:650px;
   object-fit:cover;
-  border-radius:24px;
+  border-radius:16px;
 }
 
 .social-right{
@@ -123,20 +134,21 @@ p{
 .social-images img{
   max-height:650px;
   object-fit:cover;
-  border-radius:24px;
+  border-radius:16px;
 }
 
 /* PRINT */
 
 .print-layout{
   display:grid;
-  grid-template-columns:1fr 1.2fr;
+  grid-template-columns:1.2fr 1fr; /* фото слева */
   gap:64px;
+  align-items:center;
 }
 
 .print-layout img{
   max-width:100%;
-  border-radius:24px;
+  border-radius:16px;
   object-fit:cover;
 }
 
@@ -151,7 +163,7 @@ p{
 .web-site{
   display:grid;
   grid-template-columns:1.3fr 1fr;
-  gap:64px;
+  gap:32px;
   align-items:center;
 }
 
@@ -163,7 +175,7 @@ p{
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
-  gap:40px;
+  gap:24px; /* уменьшено расстояние между элементами */
 }
 
 .web-stack img{
@@ -177,8 +189,9 @@ p{
   border-radius:24px;
   border:1px solid #e0e0e0;
   display:flex;
+  gap:16px;
   justify-content:center;
-  align-items:center;
+  align-items:flex-start;
 }
 
 /* PRESENTATIONS */
@@ -220,6 +233,11 @@ p{
   h1{font-size:48px}
   h2{font-size:32px}
   .presentation-slides{
+    gap:16px;
+  }
+
+  .web-frame{
+    flex-direction:column;
     gap:16px;
   }
 }
@@ -285,6 +303,11 @@ p{
 <h3>Полиграфия</h3>
 
 <div class="print-layout">
+<div>
+  <img src="images/print/print-main.jpg.png" alt="">
+  <img src="images/print/print-wide.jpg.png" style="margin-top:24px" alt="">
+</div>
+
 <p>
 Работа с полиграфической
 продукцией и создание
@@ -299,11 +322,6 @@ p{
 размещение текстовых блоков,
 изображений и графики
 </p>
-
-<div>
-  <img src="images/print/print-main.jpg.png" alt="">
-  <img src="images/print/print-wide.jpg.png" style="margin-top:24px" alt="">
-</div>
 </div>
 </div>
 
@@ -333,9 +351,11 @@ p{
   <div class="web-stack">
     <div class="web-frame">
       <img src="images/web/web-site2-desktop.jpg.jpg" alt="">
+      <div>
+        <img src="images/web/web-site2-mobile.jpg.png" alt="">
+        <img src="images/web/web-site2-laptop.jpg.png" alt="">
+      </div>
     </div>
-    <img src="images/web/web-site2-mobile.jpg.png" alt="">
-    <img src="images/web/web-site2-laptop.jpg.png" alt="">
   </div>
 </div>
 
