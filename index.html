@@ -17,7 +17,7 @@ body{
   font-family:'Inter',sans-serif;
   background:#f4f5f8;
   color:#1f2933;
-  line-height:1.7;
+  line-height:1.8;
 }
 
 .container{
@@ -26,7 +26,7 @@ body{
   padding:100px 20px;
 }
 
-section{margin-bottom:140px}
+section{margin-bottom:120px}
 
 h1,h2,h3{
   font-family:'Space Grotesk',sans-serif;
@@ -39,8 +39,10 @@ h3{font-size:26px;margin-bottom:32px}
 
 p{
   font-size:18px;
+  font-weight:500;
   color:#374151;
   white-space:pre-line;
+  max-width:600px;
 }
 
 /* HERO */
@@ -81,7 +83,9 @@ p{
 .block{
   background:#fff;
   border-radius:36px;
-  padding:64px;
+  padding:48px;
+  margin-bottom:80px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 /* SOCIAL */
@@ -89,13 +93,19 @@ p{
 .social-layout{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:48px;
+  gap:40px;
 }
 
 .social-left{
   display:flex;
   flex-direction:column;
   gap:32px;
+}
+
+.social-left img{
+  max-height:650px;
+  object-fit:cover;
+  border-radius:24px;
 }
 
 .social-right{
@@ -110,12 +120,24 @@ p{
   gap:32px;
 }
 
+.social-images img{
+  max-height:650px;
+  object-fit:cover;
+  border-radius:24px;
+}
+
 /* PRINT */
 
 .print-layout{
   display:grid;
   grid-template-columns:1fr 1.2fr;
   gap:64px;
+}
+
+.print-layout img{
+  max-width:100%;
+  border-radius:24px;
+  object-fit:cover;
 }
 
 /* WEB */
@@ -130,6 +152,7 @@ p{
   display:grid;
   grid-template-columns:1.3fr 1fr;
   gap:64px;
+  align-items:center;
 }
 
 .web-site.reverse{
@@ -139,8 +162,23 @@ p{
 .web-stack{
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
+  justify-content:flex-start;
   gap:40px;
+}
+
+.web-stack img{
+  border-radius:16px;
+  max-width:100%;
+}
+
+/* Вторая рамка для второго лендинга */
+.web-frame{
+  padding:16px;
+  border-radius:24px;
+  border:1px solid #e0e0e0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 /* PRESENTATIONS */
@@ -155,6 +193,15 @@ p{
   display:flex;
   gap:32px;
   margin-top:64px;
+  overflow-x:auto;
+  padding-bottom:8px;
+}
+
+.presentation-slides img{
+  max-width:400px;
+  border-radius:16px;
+  flex-shrink:0;
+  object-fit:cover;
 }
 
 /* ADAPTIVE */
@@ -172,6 +219,9 @@ p{
 
   h1{font-size:48px}
   h2{font-size:32px}
+  .presentation-slides{
+    gap:16px;
+  }
 }
 </style>
 </head>
@@ -184,7 +234,7 @@ p{
     <h1>Мария Иванова</h1>
     <p>Графический дизайнер · Figma & Web</p>
   </div>
-  <img src="images/profile/profile2.jpg">
+  <img src="images/profile/profile2.jpg" alt="Профиль">
 </section>
 
 <section>
@@ -206,8 +256,8 @@ p{
 
 <div class="social-layout">
   <div class="social-left">
-    <img src="images/social/social-1.jpg.png">
-    <img src="images/social/social-3.jpg.png">
+    <img src="images/social/social-1.jpg.png" alt="">
+    <img src="images/social/social-3.jpg.png" alt="">
   </div>
 
   <div class="social-right">
@@ -224,8 +274,8 @@ p{
     </p>
 
     <div class="social-images">
-      <img src="images/social/social-2.jpg.png">
-      <img src="images/social/social-4.jpg.png">
+      <img src="images/social/social-2.jpg.png" alt="">
+      <img src="images/social/social-4.jpg.png" alt="">
     </div>
   </div>
 </div>
@@ -251,8 +301,8 @@ p{
 </p>
 
 <div>
-  <img src="images/print/print-main.jpg.png">
-  <img src="images/print/print-wide.jpg.png" style="margin-top:40px">
+  <img src="images/print/print-main.jpg.png" alt="">
+  <img src="images/print/print-wide.jpg.png" style="margin-top:24px" alt="">
 </div>
 </div>
 </div>
@@ -263,7 +313,7 @@ p{
 <div class="web-layout">
 
 <div class="web-site">
-  <img src="images/web/web-site1-desktop.jpg.jpg">
+  <img src="images/web/web-site1-desktop.jpg.jpg" alt="">
   <div class="web-stack">
     <p>
 Создание дизайна веб-страниц,
@@ -274,17 +324,19 @@ p{
 структурой блоков и визуальных
 акцентов.
     </p>
-    <img src="images/web/web-site1-mobile.jpg.png">
-    <img src="images/web/web-site1-laptop.jpg.png">
+    <img src="images/web/web-site1-mobile.jpg.png" alt="">
+    <img src="images/web/web-site1-laptop.jpg.png" alt="">
   </div>
 </div>
 
 <div class="web-site reverse">
   <div class="web-stack">
-    <img src="images/web/web-site2-mobile.jpg.png">
-    <img src="images/web/web-site2-laptop.jpg.png">
+    <div class="web-frame">
+      <img src="images/web/web-site2-desktop.jpg.jpg" alt="">
+    </div>
+    <img src="images/web/web-site2-mobile.jpg.png" alt="">
+    <img src="images/web/web-site2-laptop.jpg.png" alt="">
   </div>
-  <img src="images/web/web-site2-desktop.jpg.jpg">
 </div>
 
 </div>
@@ -307,13 +359,13 @@ p{
 между текстом и графикой.
 </p>
 
-<img src="images/presentations/presentation-overview.jpg.png">
+<img src="images/presentations/presentation-overview.jpg.png" alt="">
 </div>
 
 <div class="presentation-slides">
-  <img src="images/presentations/presentation-slide-1.jpg.png">
-  <img src="images/presentations/presentation-slide-2.jpg.png">
-  <img src="images/presentations/presentation-slide-3.jpg.png">
+  <img src="images/presentations/presentation-slide-1.jpg.png" alt="">
+  <img src="images/presentations/presentation-slide-2.jpg.png" alt="">
+  <img src="images/presentations/presentation-slide-3.jpg.png" alt="">
 </div>
 
 </div>
