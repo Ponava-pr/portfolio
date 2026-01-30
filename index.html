@@ -273,10 +273,10 @@ p{
     display: none;
   }
 
-  /* Навыки — мобильная версия */
+  /* Навыки — мобильная версия исправленная */
   .skills {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* две колонки на телефоне */
+    grid-template-columns: repeat(2, 1fr); /* две колонки */
     gap: 16px;
   }
 
@@ -284,14 +284,16 @@ p{
     padding: 16px;
     font-size: 18px;
     text-align: center;
+    width: 100%; /* каждая плашка точно занимает колонку */
+    box-sizing: border-box;
   }
 
   .skill.main {
-    grid-column: span 2; /* основной навык занимает всю ширину */
+    grid-column: span 2; /* основной навык на всю строку */
     font-size: 24px;
     padding: 24px;
   }
-
+  
   /* Социальные сети */
   .social-layout {
     display: flex;
