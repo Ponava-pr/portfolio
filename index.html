@@ -273,21 +273,23 @@ p{
     display: none;
   }
 
-  /* Навыки */
+  /* Навыки — мобильная версия */
   .skills {
-    grid-template-columns: repeat(3, 1fr); /* как на десктопе */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* две колонки на телефоне */
     gap: 16px;
   }
 
   .skill {
-    padding: 20px;
-    font-size: 20px;
+    padding: 16px;
+    font-size: 18px;
+    text-align: center;
   }
 
   .skill.main {
-    grid-column: span 2;
-    font-size: 28px;
-    padding: 28px;
+    grid-column: span 2; /* основной навык занимает всю ширину */
+    font-size: 24px;
+    padding: 24px;
   }
 
   /* Социальные сети */
@@ -473,7 +475,7 @@ p{
 </div>
 
 <div class="block">
-<h3>Создание презентаций для различных целей</h3>
+<h3>Создание презентаций</h3>
 
 <div class="presentation-layout">
 <img src="images/presentations/presentation-overview.jpg.png" alt="">
