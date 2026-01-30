@@ -229,47 +229,65 @@ p{
 
   /* Общие изменения */
   .container {
-    padding: 16px; /* чуть меньше полей на телефоне */
+    padding: 16px; /* поля меньше на телефоне */
   }
 
-  h1 {
-    font-size: 36px;
-  }
-  
-  h2 {
-    font-size: 28px;
-    margin-bottom: 32px;
+  /* HERO */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
   }
 
+  .hero img {
+    width: 100%;
+    max-width: 300px; /* чуть больше фото */
+    height: auto;
+    border-radius: 28px;
+    margin: 0 auto;
+  }
+
+  .hero div h1 {
+    font-size: 32px; /* имя в одну строку */
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .hero div p {
+    font-size: 14px; /* контакты меньше */
+    line-height: 1.4;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  /* Заголовки блоков */
   h3 {
-    font-size: 20px; /* уменьшенные заголовки блоков */
-    margin-bottom: 16px;
+    font-size: 18px; /* чуть меньше */
+    margin-bottom: 12px;
   }
 
-  p {
-    font-size: 16px;
-    line-height: 1.6;
-  }
-
-  /* Скрываем дополнительный текст */
+  /* Скрываем лишний текст */
   .social-right p,
   .presentation-layout p {
     display: none;
   }
 
-  /* Блоки навыков */
+  /* Навыки */
   .skills {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr); /* как на десктопе */
     gap: 16px;
   }
 
   .skill {
-    padding: 16px;
+    padding: 20px;
+    font-size: 20px;
   }
 
   .skill.main {
-    font-size: 24px;
-    padding: 24px;
+    grid-column: span 2;
+    font-size: 28px;
+    padding: 28px;
   }
 
   /* Социальные сети */
@@ -277,6 +295,7 @@ p{
     display: flex;
     flex-direction: column;
     gap: 16px;
+    width: 100%;
   }
 
   .social-left,
@@ -350,14 +369,15 @@ p{
     pointer-events: none;
   }
 
-  /* Презентационные слайды */
   .presentation-slides img {
     width: auto;
     max-width: 100%;
     height: auto;
     flex-shrink: 0;
   }
+
 }
+
   
 }
 </style>
