@@ -197,7 +197,19 @@ p{
   object-fit: contain;
 }
 
-.web-site:not(.reverse) img:first-child,
+.web-stack p {
+  display: none;
+}
+
+/* Первый мобильник — убираем обводку */
+.web-site:not(.reverse) img:first-child {
+  border: none;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+
+/* Второй лендинг — возвращаем обводку для десктопа */
 .web-site.reverse img:last-child {
   border: 1px solid #e0e0e0;
   border-radius: 20px;
@@ -205,23 +217,6 @@ p{
   background: #fff;
 }
 
-.web-stack p {
-  display: none;
-}
-
-/* Первый мобильник */
-.web-site img:first-child {
-  border: none;
-  padding: 0;
-  background: none;
-}
-
-/* Второй ноутбук */
-.web-site.reverse img:last-child {
-  border: none;
-  padding: 0;
-  background: none;
-}
 
 
 /* PRESENTATIONS */
