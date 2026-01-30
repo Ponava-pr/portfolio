@@ -176,15 +176,16 @@ p{
   gap:120px;
 }
 
+/* Изменяем пропорции: увеличиваем ширину первого лендинга */
 .web-site{
   display:grid;
-  grid-template-columns:1.3fr 1fr;
+  grid-template-columns: 1.5fr 1fr; /* Было 1.3fr 1fr */
   gap:32px;
   align-items:center;
 }
 
 .web-site.reverse{
-  grid-template-columns:1fr 1.3fr;
+  grid-template-columns:1fr 1.5fr; /* Было 1fr 1.3fr */
 }
 
 .web-stack{
@@ -197,14 +198,16 @@ p{
 .web-stack img{
   border-radius:16px;
   max-width:100%;
+  object-fit: contain; /* Добавляем для корректного отображения квадратных фото ноутбуков */
 }
-  
-.web-site.reverse img:last-child {
+
+/* Убираем обводку у второго лендинга */
+/* .web-site.reverse img:last-child {
   border: 1px solid #e0e0e0;
   border-radius: 20px;
   padding: 12px;
   background: #fff;
-}
+} */
 
 /* ПРАВКА 4: Убираем текст веба - оставляем только заголовок */
 .web-stack p {
