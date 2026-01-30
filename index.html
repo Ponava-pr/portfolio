@@ -89,6 +89,14 @@ p{
   color:#1f2933;
 }
 
+/* ПРАВКА 1: Центрирование и жирный текст для Adobe Illustrator */
+.skill:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
 /* PORTFOLIO BLOCK */
 
 .block{
@@ -113,10 +121,10 @@ p{
   gap:32px;
 }
 
-.social-left img{
-  max-height:650px;
-  object-fit:cover;
-  border-radius:16px;
+/* ПРАВКА 2: Уменьшаем скругление, чтобы не обрезало картинки */
+.social-left img,
+.social-images img {
+  border-radius: 12px; /* Было 16px */
 }
 
 .social-right{
@@ -131,25 +139,33 @@ p{
   gap:32px;
 }
 
-.social-images img{
-  max-height:650px;
-  object-fit:cover;
-  border-radius:16px;
-}
-
 /* PRINT */
 
-.print-layout{
-  display:grid;
-  grid-template-columns:1.2fr 1fr; /* фото слева */
-  gap:64px;
-  align-items:center;
+/* ПРАВКА 3: Меняем структуру блока полиграфии */
+.print-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 24px 64px;
+  align-items: start;
 }
 
-.print-layout img{
-  max-width:100%;
-  border-radius:16px;
-  object-fit:cover;
+.print-layout > div:first-child {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.print-layout p {
+  grid-column: 2;
+  grid-row: 1;
+  margin-top: 0;
+}
+
+.print-layout img:last-child {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  margin-top: 0;
+  width: 100%;
 }
 
 /* WEB */
@@ -175,7 +191,7 @@ p{
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
-  gap:24px; /* уменьшено расстояние между элементами */
+  gap:24px;
 }
 
 .web-stack img{
@@ -183,15 +199,39 @@ p{
   max-width:100%;
 }
 
-/* Вторая рамка для второго лендинга */
-.web-frame{
-  padding:16px;
-  border-radius:24px;
-  border:1px solid #e0e0e0;
-  display:flex;
-  gap:16px;
-  justify-content:center;
-  align-items:flex-start;
+/* ПРАВКА 4: Увеличиваем ноутбук и добавляем рамку для второго лендинга */
+.web-frame {
+  padding: 20px;
+  border-radius: 24px;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: flex-start;
+  background: #fff;
+}
+
+.web-frame img:first-child {
+  flex: 1;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.web-frame > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 0.6;
+}
+
+.web-frame > div img {
+  max-height: 220px;
+  object-fit: contain;
+}
+
+/* ПРАВКА 6: Убираем текст веба - оставляем только заголовок */
+.web-stack p {
+  display: none;
 }
 
 /* PRESENTATIONS */
@@ -200,6 +240,16 @@ p{
   display:grid;
   grid-template-columns:1fr 1.3fr;
   gap:64px;
+}
+
+/* ПРАВКА 5: Рамка и увеличение первой фотки презентаций */
+.presentation-layout img:first-child {
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  padding: 12px;
+  background: #fff;
+  max-height: 500px;
+  object-fit: contain;
 }
 
 .presentation-slides{
@@ -230,6 +280,28 @@ p{
     grid-template-columns:1fr;
   }
 
+  /* Адаптация для полиграфии на мобильных */
+  .print-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 32px;
+  }
+  
+  .print-layout > div:first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  
+  .print-layout p {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  
+  .print-layout img:last-child {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
   h1{font-size:48px}
   h2{font-size:32px}
   .presentation-slides{
@@ -239,6 +311,12 @@ p{
   .web-frame{
     flex-direction:column;
     gap:16px;
+  }
+  
+  .web-frame img:first-child,
+  .web-frame > div img {
+    max-height: none;
+    width: 100%;
   }
 }
 </style>
@@ -270,8 +348,7 @@ p{
 <h2>Портфолио</h2>
 
 <div class="block">
-<h3>Создание визуальных материалов
-для социальных сетей</h3>
+<h3>Социальные сети</h3>
 
 <div class="social-layout">
   <div class="social-left">
@@ -281,6 +358,9 @@ p{
 
   <div class="social-right">
     <p>
+Создание визуальных материалов
+для социальных сетей
+
 Создаю постеры, баннеры, шапки,
 обложки и другие графические
 элементы. Умею адаптировать стиль
@@ -298,16 +378,19 @@ p{
 </div>
 
 <div class="block">
-<h3>Работа с полиграфической
-продукцией</h3>
+<h3>Полиграфия</h3>
 
+<!-- ПРАВКА 3: Новая структура блока -->
 <div class="print-layout">
 <div>
   <img src="images/print/print-main.jpg.png" alt="">
-  <img src="images/print/print-wide.jpg.png" style="margin-top:24px" alt="">
 </div>
 
 <p>
+Работа с полиграфической
+продукцией и создание
+макетов для печати
+
 Дизайн постеров разных
 форматов, оформление
 журнальных страниц
@@ -317,24 +400,26 @@ p{
 размещение текстовых блоков,
 изображений и графики
 </p>
+
+<img src="images/print/print-wide.jpg.png" alt="">
 </div>
 </div>
 
 <div class="block">
-<h3>Создание дизайна веб-страниц</h3>
+<h3>Веб-дизайн</h3>
 
 <div class="web-layout">
 
 <div class="web-site">
   <img src="images/web/web-site1-desktop.jpg.jpg" alt="">
   <div class="web-stack">
-    <p>
-    </p>
+    <!-- ПРАВКА 6: Текст удален, оставлен только заголовок блока выше -->
     <img src="images/web/web-site1-mobile.jpg.png" alt="">
     <img src="images/web/web-site1-laptop.jpg.png" alt="">
   </div>
 </div>
 
+<!-- ПРАВКА 4: Добавлена рамка и исправлено расположение -->
 <div class="web-site reverse">
   <div class="web-stack">
     <div class="web-frame">
@@ -351,8 +436,7 @@ p{
 </div>
 
 <div class="block">
-<h3>Создание презентаций
-для различных целей</h3>
+<h3>Создание презентаций для различных целей</h3>
 
 <div class="presentation-layout">
 <p>
@@ -365,6 +449,7 @@ p{
 между текстом и графикой.
 </p>
 
+<!-- ПРАВКА 5: Фотка теперь в рамке -->
 <img src="images/presentations/presentation-overview.jpg.png" alt="">
 </div>
 
