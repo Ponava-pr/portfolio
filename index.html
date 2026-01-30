@@ -226,42 +226,139 @@ p{
 /* ADAPTIVE */
 
 @media(max-width:900px){
-  .hero,
-  .social-layout,
-  .print-layout,
-  .web-site,
-  .web-site.reverse,
-  .presentation-layout,
-  .skills{
-    grid-template-columns:1fr;
+
+  /* Общие изменения */
+  .container {
+    padding: 16px; /* чуть меньше полей на телефоне */
   }
 
-  .print-layout {
+  h1 {
+    font-size: 36px;
+  }
+  
+  h2 {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+
+  h3 {
+    font-size: 20px; /* уменьшенные заголовки блоков */
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Скрываем дополнительный текст */
+  .social-right p,
+  .presentation-layout p {
+    display: none;
+  }
+
+  /* Блоки навыков */
+  .skills {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 32px;
-  }
-  
-  .print-layout > div:first-child {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  
-  .print-layout p {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  
-  .print-layout img:last-child {
-    grid-column: 1;
-    grid-row: 3;
+    gap: 16px;
   }
 
-  h1{font-size:48px}
-  h2{font-size:32px}
-  .presentation-slides{
-    gap:16px;
+  .skill {
+    padding: 16px;
   }
+
+  .skill.main {
+    font-size: 24px;
+    padding: 24px;
+  }
+
+  /* Социальные сети */
+  .social-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .social-left,
+  .social-right {
+    width: 100%;
+  }
+
+  .social-left img,
+  .social-right .social-images img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Полиграфия */
+  .print-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .print-layout img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Веб-сайты */
+  .web-site,
+  .web-site.reverse {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .web-stack img,
+  .web-site img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Презентации */
+  .presentation-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .presentation-layout img {
+    width: 100%;
+    height: auto;
+  }
+
+  .presentation-slides {
+    gap: 12px;
+    margin-top: 16px;
+    overflow-x: auto;
+    position: relative;
+  }
+
+  /* Плашка "Скроллите →" */
+  .presentation-slides::before {
+    content: "Скроллите →";
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(31, 41, 51, 0.7);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    pointer-events: none;
+  }
+
+  /* Презентационные слайды */
+  .presentation-slides img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    flex-shrink: 0;
+  }
+}
+  
 }
 </style>
 </head>
