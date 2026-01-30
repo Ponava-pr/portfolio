@@ -137,25 +137,27 @@ p{
   gap:32px;
 }
 
-/* PRINT */
+/* PRINT BLOCK */
 
 .print-layout {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 24px; /* расстояние между фотографиями */
 }
 
-/* Отступ между новой и широкой фотографией */
+/* Главная фотография с отступом снизу, если нужно */
 .print-new {
   margin-bottom: 40px;
 }
 
-/* Стили для всех фотографий в блоке */
+/* Все изображения в блоке полиграфии */
 .print-layout img {
-  border-radius: 12px;
+  border-radius: 12px !important; /* скругление как в соцсетях */
+  overflow: hidden;               /* чтобы углы реально обрезались */
   width: 100%;
   display: block;
 }
+
   
 /* WEB */
 
