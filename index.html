@@ -89,7 +89,6 @@ p{
   color:#1f2933;
 }
 
-/* ПРАВКА 1: Центрирование и жирный текст для Adobe Illustrator */
 .skill:nth-child(2) {
   display: flex;
   align-items: center;
@@ -121,7 +120,6 @@ p{
   gap:32px;
 }
 
-/* ПРАВКА 2: Уменьшаем скругление, чтобы не обрезало картинки */
 .social-left img,
 .social-images img {
   border-radius: 12px; /* Было 16px */
@@ -141,7 +139,6 @@ p{
 
 /* PRINT */
 
-/* ПРАВКА 3: Меняем структуру блока полиграфии */
 .print-layout {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -176,16 +173,15 @@ p{
   gap:120px;
 }
 
-/* Изменяем пропорции: увеличиваем ширину первого лендинга */
 .web-site{
   display:grid;
-  grid-template-columns: 1.8fr 1fr; /* Было 1.3fr 1fr */
+  grid-template-columns: 1.5fr 1fr; 
   gap:32px;
   align-items:center;
 }
 
 .web-site.reverse{
-  grid-template-columns:1fr 1.5fr; /* Было 1fr 1.3fr */
+  grid-template-columns:1fr 1.5fr; 
 }
 
 .web-stack{
@@ -198,10 +194,10 @@ p{
 .web-stack img{
   border-radius:16px;
   max-width:100%;
-  object-fit: contain; /* Добавляем для корректного отображения квадратных фото ноутбуков */
+  object-fit: contain;
 }
 
-
+.web-site:not(.reverse) img:first-child,
 .web-site.reverse img:last-child {
   border: 1px solid #e0e0e0;
   border-radius: 20px;
@@ -209,21 +205,18 @@ p{
   background: #fff;
 }
 
-/* ПРАВКА 4: Убираем текст веба - оставляем только заголовок */
 .web-stack p {
   display: none;
 }
 
 /* PRESENTATIONS */
 
-/* ПРАВКА 2 для презентаций: меняем местами фото и текст */
 .presentation-layout{
   display:grid;
   grid-template-columns:1.3fr 1fr;
   gap:64px;
 }
 
-/* ПРАВКА 5: Рамка и увеличение первой фотки презентаций */
 .presentation-layout img:first-child {
   border: 1px solid #e0e0e0;
   border-radius: 20px;
@@ -261,7 +254,6 @@ p{
     grid-template-columns:1fr;
   }
 
-  /* Адаптация для полиграфии на мобильных */
   .print-layout {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
@@ -347,7 +339,6 @@ p{
 <div class="block">
 <h3>Работа с полиграфической продукцией</h3>
 
-<!-- ПРАВКА 3: Новая структура блока -->
 <div class="print-layout">
 <div>
   <img src="images/print/print-main.jpg.png" alt="">
@@ -372,17 +363,14 @@ p{
 
 <div class="web-layout">
 
-<!-- Первый лендинг (как было) -->
 <div class="web-site">
   <img src="images/web/web-site1-desktop.jpg.png" alt="">
   <div class="web-stack">
-    <!-- ПРАВКА 6: Текст удален, оставлен только заголовок блока выше -->
     <img src="images/web/web-site1-mobile.jpg.png" alt="">
     <img src="images/web/web-site1-laptop.jpg.png" alt="">
   </div>
 </div>
 
-<!-- Второй лендинг (ПРАВКА 1: переделан по аналогии с первым, но с обратным порядком) -->
 <div class="web-site reverse">
   <div class="web-stack">
     <img src="images/web/web-site2-mobile.jpg.png" alt="">
@@ -397,7 +385,6 @@ p{
 <div class="block">
 <h3>Создание презентаций для различных целей</h3>
 
-<!-- ПРАВКА 2: меняем местами фото и текст -->
 <div class="presentation-layout">
 <img src="images/presentations/presentation-overview.jpg.png" alt="">
 <p>
