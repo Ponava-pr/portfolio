@@ -199,46 +199,17 @@ p{
   max-width:100%;
 }
 
-/* ПРАВКА 4: Увеличиваем ноутбук и добавляем рамку для второго лендинга */
-.web-frame {
-  padding: 20px;
-  border-radius: 24px;
-  border: 1px solid #e0e0e0;
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-  align-items: flex-start;
-  background: #fff;
-}
-
-.web-frame img:first-child {
-  flex: 1;
-  max-height: 500px;
-  object-fit: contain;
-}
-
-.web-frame > div {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  flex: 0.6;
-}
-
-.web-frame > div img {
-  max-height: 220px;
-  object-fit: contain;
-}
-
-/* ПРАВКА 6: Убираем текст веба - оставляем только заголовок */
+/* ПРАВКА 4: Убираем текст веба - оставляем только заголовок */
 .web-stack p {
   display: none;
 }
 
 /* PRESENTATIONS */
 
+/* ПРАВКА 2 для презентаций: меняем местами фото и текст */
 .presentation-layout{
   display:grid;
-  grid-template-columns:1fr 1.3fr;
+  grid-template-columns:1.3fr 1fr;
   gap:64px;
 }
 
@@ -307,17 +278,6 @@ p{
   .presentation-slides{
     gap:16px;
   }
-
-  .web-frame{
-    flex-direction:column;
-    gap:16px;
-  }
-  
-  .web-frame img:first-child,
-  .web-frame > div img {
-    max-height: none;
-    width: 100%;
-  }
 }
 </style>
 </head>
@@ -348,7 +308,7 @@ p{
 <h2>Портфолио</h2>
 
 <div class="block">
-<h3>Социальные сети</h3>
+<h3>Создание визуальных материалов для социальных сетей</h3>
 
 <div class="social-layout">
   <div class="social-left">
@@ -358,10 +318,7 @@ p{
 
   <div class="social-right">
     <p>
-Создание визуальных материалов
-для социальных сетей
-
-Создаю постеры, баннеры, шапки,
+  Создаю постеры, баннеры, шапки,
 обложки и другие графические
 элементы. Умею адаптировать стиль
 под формат и задачу:
@@ -378,7 +335,7 @@ p{
 </div>
 
 <div class="block">
-<h3>Полиграфия</h3>
+<h3>Работа с полиграфической продукцией</h3>
 
 <!-- ПРАВКА 3: Новая структура блока -->
 <div class="print-layout">
@@ -387,16 +344,11 @@ p{
 </div>
 
 <p>
-Работа с полиграфической
-продукцией и создание
-макетов для печати
-
-Дизайн постеров разных
+  Дизайн постеров разных
 форматов, оформление
 журнальных страниц
 и разворотов.
-
-Проработка структуры макета:
+  Проработка структуры макета:
 размещение текстовых блоков,
 изображений и графики
 </p>
@@ -410,6 +362,7 @@ p{
 
 <div class="web-layout">
 
+<!-- Первый лендинг (как было) -->
 <div class="web-site">
   <img src="images/web/web-site1-desktop.jpg.jpg" alt="">
   <div class="web-stack">
@@ -419,17 +372,13 @@ p{
   </div>
 </div>
 
-<!-- ПРАВКА 4: Добавлена рамка и исправлено расположение -->
+<!-- Второй лендинг (ПРАВКА 1: переделан по аналогии с первым, но с обратным порядком) -->
 <div class="web-site reverse">
   <div class="web-stack">
-    <div class="web-frame">
-      <img src="images/web/web-site2-desktop.jpg.jpg" alt="">
-      <div>
-        <img src="images/web/web-site2-mobile.jpg.png" alt="">
-        <img src="images/web/web-site2-laptop.jpg.png" alt="">
-      </div>
-    </div>
+    <img src="images/web/web-site2-mobile.jpg.png" alt="">
+    <img src="images/web/web-site2-laptop.jpg.png" alt="">
   </div>
+  <img src="images/web/web-site2-desktop.jpg.jpg" alt="">
 </div>
 
 </div>
@@ -438,19 +387,17 @@ p{
 <div class="block">
 <h3>Создание презентаций для различных целей</h3>
 
+<!-- ПРАВКА 2: меняем местами фото и текст -->
 <div class="presentation-layout">
+<img src="images/presentations/presentation-overview.jpg.png" alt="">
 <p>
-Разработка структуры слайдов,
+  Разработка структуры слайдов,
 логики подачи информации
 и визуального ритма.
-
-Дизайн слайдов с учётом
+  Дизайн слайдов с учётом
 читаемости и баланса
 между текстом и графикой.
 </p>
-
-<!-- ПРАВКА 5: Фотка теперь в рамке -->
-<img src="images/presentations/presentation-overview.jpg.png" alt="">
 </div>
 
 <div class="presentation-slides">
