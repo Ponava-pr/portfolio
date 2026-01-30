@@ -140,35 +140,23 @@ p{
 /* PRINT */
 
 .print-layout {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 24px 64px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.print-layout > div:first-child {
-  grid-column: 1;
-  grid-row: 1;
+/* Отступ между новой и широкой фотографией */
+.print-new {
+  margin-bottom: 40px;
 }
 
-.print-layout p {
-  grid-column: 2;
-  grid-row: 1;
-  margin-top: 0;
-}
-
-.print-layout img:last-child {
-  grid-column: 1 / span 2;
-  grid-row: 2;
-  margin-top: 0;
+/* Стили для всех фотографий в блоке */
+.print-layout img {
+  border-radius: 12px;
   width: 100%;
+  display: block;
 }
   
-.print-layout > div:first-child img {
-  border-radius: 12px;
-}
-
 /* WEB */
 
 .web-layout{
@@ -346,21 +334,14 @@ p{
 <h3>Работа с полиграфической продукцией</h3>
 
 <div class="print-layout">
-<div>
-  <img src="images/print/print-main.jpg.png" alt="">
-</div>
-
-<p>
-  Дизайн постеров разных
-форматов, оформление
-журнальных страниц
-и разворотов.
-  Проработка структуры макета:
-размещение текстовых блоков,
-изображений и графики
-</p>
-
-<img src="images/print/print-wide.jpg.png" alt="">
+  <!-- Главная фотография -->
+  <img src="images/print/print-main.jpg.png" alt="" class="print-main">
+  
+  <!-- Новая фотография -->
+  <img src="images/print/print-1wide.jpg.png" alt="" class="print-new">
+  
+  <!-- Широкая фотография (бывшая print-wide) с отступом сверху -->
+  <img src="images/print/print-wide.jpg.png" alt="" class="print-wide">
 </div>
 </div>
 
